@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>WDD 131 – Dynamic Web Fundamentals – Davin Quist</title>
+
+    <!-- SEO -->
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals | Davin Quist | Assignments, projects, HTML, CSS, JavaScript, optimized local images, navigation to Canvas and LinkedIn." />
+    <meta name="author" content="Davin Quist" />
+
+    <!-- Google Fonts (Headings: Merriweather, Body: Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+
+    <script src="scripts/getdates.js" defer></script>
+
+  </head>
+  <body>
+    <header>
+      <h2><span id="course-title">WDD 131 – Dynamic Web Fundamentals</span></h2>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a></li>
+          <li>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/4?lang=eng&id=p9#p9"
+               target="_blank" rel="noopener noreferrer">Favorite Scripture</a>
+          </li>
+          <li><a href="./final-project/">Final Project</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Davin Quist</h1>
+
+      <section class="card" aria-labelledby="about-me-title">
+        <h2 id="about-me-title">About Me</h2>
+        <!-- Optimized, local image. Keep height flexible to avoid distortion -->
+        <img
+          src="images/profile.webp"
+          alt="Portrait of Davin Quist"
+          width="400"
+          loading="lazy"
+        />
+        <p>
+          Hello! My name is <strong>Davin Quist</strong>. I’m an online student in the BYU Pathway program,
+          currently studying Dynamic Web Fundamentals (WDD 131). I enjoy building creative projects, learning
+          web development skills, and exploring how HTML, CSS, and JavaScript can bring ideas to life.
+          Outside of school, I like working on fantasy world-building (D&amp;D), tabletop games, and video games.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="resources-title">
+        <h2 id="resources-title">Web Dev Resources</h2>
+        <img
+          src="images/workspace.webp"
+          alt="Minimal web development workspace with a laptop"
+          width="440"
+          loading="lazy"
+        />
+        <ul>
+          <li>Semantic HTML structure (header, main, footer)</li>
+          <li>Optimized, local images (proper dimensions, compression, and <code>loading="lazy"</code>)</li>
+          <li>Accessible navigation and descriptive link text</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="currentyear"></span> · Davin Quist · USA
+      </p>
+      <p id="lastModified"></p>
+    </footer>
+
+    <script>
+      // Current year
+      document.getElementById("currentyear").textContent = new Date().getFullYear();
+
+      // Last modified (provided by the browser)
+      const lm = document.lastModified;
+      document.getElementById("lastModified").textContent = lm ? `Last modified: ${lm}` : "";
+    </script>
+  </body>
+</html>
