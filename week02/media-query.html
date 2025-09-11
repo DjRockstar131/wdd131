@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <!-- Standard head content -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Media Query Example – Davin Quist – WDD 131</title>
+    <meta name="description" content="WDD 131 week 02 media query example demonstrating responsive layout changes." />
+    <meta name="author" content="Davin Quist" />
+
+    <!-- Google Font: Roboto (contemporary embed) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="styles/media-query.css" />
+    <link rel="stylesheet" href="styles/media-query-large.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Media Query Example</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Proverbs 3:5–6</h2>
+        <p>
+          Trust in the Lord with all thine heart; and lean not unto thine own understanding.
+          In all thy ways acknowledge him, and he shall direct thy paths.
+        </p>
+      </section>
+
+      <section>
+        <h2>James 1:5</h2>
+        <p>
+          If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and
+          upbraideth not; and it shall be given him.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Davin Quist</p>
+    </footer>
+
+    <script>
+      // optional: auto-fill year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

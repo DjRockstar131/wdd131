@@ -1,0 +1,14 @@
+/* Check Your Understanding: styles that apply at ≥ 500px */
+@media (min-width: 500px) {
+  /* Header becomes black with white text */
+  header {
+    background: #000;
+    color: #fff;
+    border-color: #1f2937;
+  }
+
+  /* Main switches to two equal columns */
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
