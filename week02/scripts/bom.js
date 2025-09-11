@@ -5,15 +5,14 @@ const input = document.querySelector("#favchap");
 const addBtn = document.querySelector("#addBtn");
 const list = document.querySelector("#chapterList");
 
-// Add chapter on button click
+// Click event listener for Add Chapter button
 addBtn.addEventListener("click", () => {
   const chapter = input.value.trim();
 
+  // Check input is not blank
   if (chapter !== "") {
     // Create list item
     const li = document.createElement("li");
-
-    // Add chapter text
     li.textContent = chapter;
 
     // Create delete button
@@ -29,13 +28,16 @@ addBtn.addEventListener("click", () => {
 
     // Clear input field
     input.value = "";
-    input.focus();
+  }
 
-    // Delete functionality
-    delBtn.addEventListener("click", () => {
-      list.removeChild(li);
-    });
-  } else {
-    input.focus();
+  // Always put focus back in input
+  input.focus();
+});
+
+// Event delegation for delete buttons
+list.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    const li = e.target.parentElement;
+    list.removeChild(li);
   }
 });
