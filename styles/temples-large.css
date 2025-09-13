@@ -1,0 +1,21 @@
+/* Larger View Styles */
+@media (min-width: 48rem){ /* ~768px */
+  /* Header layout: keep items in a row, show nav, hide hamburger */
+  .site-header{
+    align-items: center;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  .nav-list{
+    display: flex !important;   /* always visible on large screens */
+    margin-left: auto;
+  }
+
+  /* Gallery Grid — multi-column */
+  .gallery{
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}

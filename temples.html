@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Temple Album — Davin Quist — WDD 131</title>
+    <meta name="description" content="Temple Album gallery with responsive navigation and grid layout." />
+    <meta name="author" content="Davin Quist" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- CSS: mobile first, then large -->
+    <link rel="stylesheet" href="styles/temples.css" />
+    <link rel="stylesheet" href="styles/temples-large.css" />
+    <script src="scripts/temples.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <h1>Temple Album</h1>
+      </div>
+
+      <!-- Hamburger (visible on mobile only via CSS) -->
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <!-- Nav inside header; Flex + hover styling in CSS -->
+      <nav id="primary-navigation" class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Old</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Large</a></li>
+          <li><a href="#">Small</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <h2>Temple Gallery</h2>
+
+      <!-- Grid container -->
+      <section class="gallery" aria-label="Temple photos">
+        <!-- It’s OK to use a single placeholder image for now -->
+        <figure>
+          <img src="images/Salt Lake Temple.jpg" alt="Temple 1 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Salt Lake Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Anchorage Alaska Temple.jpg" alt="Temple 2 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Anchorage Alaska Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Rome Italy Temple.jpg" alt="Temple 3 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Rome Italy Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Madrid Spain Temple.jpg" alt="Temple 4 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Madrid Spain Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Paris France Temple.jpg" alt="Temple 5 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Paris France Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Tokyo Japan Temple.jpg" alt="Temple 6 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Tokyo Japan Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Bountiful Utah Temple.jpg" alt="Temple 7 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Bountiful Utah Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Mesa Arizona Temple.jpg" alt="Temple 8 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Mesa Arizona Temple</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Hong Kong China Temple.jpg" alt="Temple 9 placeholder image" loading="lazy" width="800" height="500" />
+          <figcaption>Hong Kong China Temple</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> • Davin Quist • WDD 131</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+  </body>
+</html>
