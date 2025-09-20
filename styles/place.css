@@ -16,10 +16,10 @@
 /* All other rules remain the same as before */
 *{ box-sizing:border-box; }
 html,body{ margin:0; }
-body{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+body {
+  font-family: "Forum", serif;
   color: var(--text);
-  background: radial-gradient(1200px 800px at 10% -10%, rgba(217,4,41,.2), transparent 50%) var(--bg);
+  background: var(--bg);
   line-height: 1.6;
 }
 
