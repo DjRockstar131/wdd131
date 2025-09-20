@@ -1,0 +1,142 @@
+:root{
+  /* Utah-inspired palette: red rock, sandstone, desert sky */
+  --primary: #b43c2c;  /* red sandstone */
+  --accent:  #e07a5f;  /* warm desert orange */
+  --neutral: #ffffff;  /* white */
+  --bg:      #0f172a;  /* slate-900 */
+  --card:    #1a1e32;  /* card background */
+  --text:    #e5e7eb;  /* gray-200 */
+  --muted:   #a7b0c0;
+
+  --radius:  1.25rem;
+  --space:   clamp(0.75rem, 1.5vw, 1.25rem);
+  --maxw:    72rem;
+}
+
+/* All other rules remain the same as before */
+*{ box-sizing:border-box; }
+html,body{ margin:0; }
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(217,4,41,.2), transparent 50%) var(--bg);
+  line-height: 1.6;
+}
+
+.wrap{ max-width: var(--maxw); margin-inline:auto; padding: var(--space); }
+
+/* Header */
+.site-header{
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: var(--neutral);
+}
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.site-header h1{ margin:0; font-weight:800; letter-spacing:.3px; }
+.site-nav a{
+  color: var(--neutral);
+  text-decoration: none;
+  padding:.35rem .6rem;
+  border-radius:.5rem;
+  display:inline-block;
+}
+.site-nav a:hover{ background: rgba(255,255,255,.15); }
+
+/* Layout */
+.layout{
+  max-width: var(--maxw);
+  margin-inline:auto;
+  padding: var(--space);
+  display:grid;
+  gap: var(--space);
+}
+
+/* Hero */
+.hero{
+  position:relative; overflow:hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.hero img{
+  width:100%; height:auto; display:block; aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+.hero__caption{
+  position:absolute; inset:auto var(--space) var(--space) var(--space);
+  background: linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,.05));
+  backdrop-filter: blur(2px);
+  padding: .85rem 1rem; border-radius: .9rem; color: var(--neutral);
+}
+.hero__caption h2{ margin:0 0 .25rem; font-weight:800; }
+
+/* Cards */
+.card{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: calc(var(--space) * 1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.card h2{ margin-top:0; font-weight:800; }
+
+/* Facts */
+.facts ul{ margin:0; padding-left:1.15rem; }
+
+/* Weather */
+.weather__header{
+  display:flex; align-items:center; gap:.6rem; margin-bottom:.5rem;
+}
+.weather-icon{ width:28px; height:28px; flex:0 0 auto; }
+
+.weather__grid{
+  display:grid; gap:.35rem;
+}
+.weather__note{
+  color: var(--muted);
+  margin-top:.75rem; font-size:.95rem;
+}
+
+/* Footer */
+.site-footer{
+  max-width: var(--maxw); margin: 2rem auto; padding: var(--space);
+  color: var(--muted); text-align:center;
+  border-top: 1px dashed rgba(255,255,255,.12);
+}
+
+/* ====== MEDIA QUERIES ====== */
+
+/* Tablet: 640px+ */
+@media (min-width: 640px){
+  .layout{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "facts weather";
+  }
+  .hero{ grid-area: hero; }
+  .facts{ grid-area: facts; }
+  .weather{ grid-area: weather; }
+}
+
+/* Desktop: 960px+ */
+/* Show ⛅ after the Weather heading via pseudo-element; hide the inline SVG */
+@media (min-width: 960px){
+  .weather__header .weather-icon{ display:none; }
+
+  /* Pseudo-element emoticon requirement */
+  #weather-heading::after{
+    content: "  ⛅";
+    font-size: 1.15em;
+    line-height: 1;
+    vertical-align: middle;
+    margin-left: .15em;
+  }
+
+  .layout{
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "facts weather";
+  }
+}

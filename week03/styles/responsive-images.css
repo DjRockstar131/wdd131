@@ -1,0 +1,33 @@
+/* Basic page chrome */
+* { box-sizing: border-box; }
+
+body {
+  font-family: Roboto, helvetica, sans-serif;
+  margin: 1rem;
+  line-height: 1.6;
+}
+
+header, main, footer {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid rgb(0 0 0 / 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.notes {
+  margin-top: 1rem;
+}
+
+/* --- Responsive image approaches --- */
+
+/* Easiest: keep intrinsic aspect ratio and scale with width */
+.hero img {
+  width: 100%;
+  height: auto;   /* maintains aspect ratio */
+  display: block; /* avoids inline-gap */
+}
+

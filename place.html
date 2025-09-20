@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover Utah — facts, photos, and current weather." />
+  <meta name="author" content="Your Name" />
+
+  <title>Utah • Place</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/place.css" />
+
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Utah</h1>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#">Home</a>
+        <a href="#">Photos</a>
+        <a href="#">Weather</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero image of Utah">
+        <img src="images/hero-800.webp"
+        srcset="
+          images/hero-400.webp 400w,
+          images/hero-800.webp 800w,
+          images/hero-1200.webp 1200w
+        "
+        sizes="(max-width: 600px) 100vw, (max-width: 1000px) 90vw, 1200px"
+        width="1200" height="600"
+        alt="Sandstone cliffs and desert sky in Utah" loading="lazy"
+      />
+      <div class="hero__caption">
+        <h2>Land of Red Rock & Mountains</h2>
+        <p>Explore Zion, Arches, Bryce Canyon, and the Wasatch Range.</p>
+      </div>
+    </section>
+
+    <!-- FACTS -->
+    <section class="card facts" aria-labelledby="facts-heading">
+      <h2 id="facts-heading">Fast Facts</h2>
+      <ul>
+        <li><strong>Capital:</strong> Salt Lake City</li>
+        <li><strong>Region:</strong> Western United States</li>
+        <li><strong>Nickname:</strong> The Beehive State</li>
+        <li><strong>Known for:</strong> National Parks, skiing, Great Salt Lake</li>
+      </ul>
+    </section>
+
+    <!-- WEATHER -->
+    <section class="card weather" aria-labelledby="weather-heading">
+      <div class="weather__header">
+        <h2 id="weather-heading">Weather</h2>
+        <img class="weather-icon" src="images/weather-icon.svg" width="32" height="32" alt="Partly cloudy icon" />
+      </div>
+
+      <div class="weather__grid">
+        <p><strong>Conditions:</strong> Partly Cloudy</p>
+        <p><strong>Temperature:</strong> <span id="temp-text">46 °F</span></p>
+        <p><strong>Wind:</strong> <span id="wind-text">7 mph</span></p>
+        <p><strong>Wind Chill:</strong> <span id="windchill-text">—</span></p>
+      </div>
+      <p class="weather__note">Wind chill shows only when conditions allow (≤ 50°F and &gt; 3 mph).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="currentyear"></span> • Davin Quist</p>
+    <p>Last Modified: <span id="lastmodified"></span></p>
+  </footer>
+</body>
+</html>

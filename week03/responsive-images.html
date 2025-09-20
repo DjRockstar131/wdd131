@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="WDD 131 – Responsive Images with <picture>" />
+  <meta name="author" content="Davin Quist" />
+  <title>Responsive Images</title>
+  <link rel="stylesheet" href="styles/responsive-images.css" />
+</head>
+<body>
+  <header>
+    <h1>Responsive Images Demo</h1>
+  </header>
+
+  <main>
+    <div class="hero">
+      <!-- Emmet shorthand you mentioned:
+           main>div.hero>picture>source:media*2+img -->
+      <picture>
+        <!-- Large first (desktop) -->
+        <source
+          media="(min-width: 1000px)"
+          srcset="images/hero-large.webp" />
+
+        <!-- Medium (tablet) -->
+        <source
+          media="(min-width: 500px)"
+          srcset="images/hero-medium.webp" />
+
+        <!-- Fallback image (mobile & default) -->
+        <img
+          src="images/hero-small.webp"
+          alt="Temple exterior with architectural details and landscaped grounds"
+          width="1500" height="750" />
+        <!-- Note: width/height reflect the LARGE intrinsic size (1500×750)
+             to preserve the 2:1 aspect ratio and prevent layout shift. -->
+      </picture>
+    </div>
+
+    <section class="notes">
+      <h2>Why set <code>width</code> and <code>height</code>?</h2>
+      <p>
+        Setting intrinsic dimensions (e.g., <code>1500</code>×<code>750</code>) gives the browser the correct
+        aspect ratio (2:1) up front, preventing Cumulative Layout Shift (CLS). The image will still scale
+        responsively via CSS.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Responsive Images</p>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
