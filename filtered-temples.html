@@ -4,8 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Filtered Temples - dynamic cards and filters (WDD131)">
-  <meta name="author" content="Davin Quist">
+  <meta name="author" content="Your Name">
   <title>Filtered Temples</title>
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles/filtered-temples.css">
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
@@ -14,11 +20,11 @@
     <h1>Temple Album (Filtered)</h1>
     <nav class="main-nav" aria-label="Primary">
       <ul>
-        <li><button data-filter="home"  class="active">Home</button></li>
-        <li><button data-filter="old">Old</button></li>
-        <li><button data-filter="new">New</button></li>
-        <li><button data-filter="large">Large</button></li>
-        <li><button data-filter="small">Small</button></li>
+        <li><a href="#" data-filter="home" class="active">Home</a></li>
+        <li><a href="#" data-filter="old">Old</a></li>
+        <li><a href="#" data-filter="new">New</a></li>
+        <li><a href="#" data-filter="large">Large</a></li>
+        <li><a href="#" data-filter="small">Small</a></li>
       </ul>
     </nav>
   </header>
@@ -30,7 +36,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Davin Quist • WDD131 • Filtered Temples</p>
+    <p>© <span id="year"></span> • WDD131 • Filtered Temples</p>
     <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 </body>

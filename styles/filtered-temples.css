@@ -1,142 +1,97 @@
-/* Temples — Mobile First
-   - Flex nav with hover
-   - Main centered with limited width
-   - Grid gallery: 1 column on mobile
-   - Hamburger visible; menu collapsed by default
-*/
-
-:root{
-  --bg: #0f172a;         /* slate-900 */
-  --panel: #0b1220;      /* deep slate */
-  --card: #111827;       /* gray-900 */
-  --muted: #94a3b8;      /* slate-400 */
-  --text: #e5e7eb;       /* gray-200 */
-  --accent: #38bdf8;     /* sky-400 */
-  --accent-2:#22d3ee;    /* cyan-400 */
-  --radius: 14px;
+:root {
+  --page-max: 1100px;
   --gap: 1rem;
+  --card-radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,.15);
 }
 
-*,
-*::before,
-*::after { box-sizing: border-box; }
 
-html, body { height: 100%; }
-
-body{
+body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--bg), #0b1220 60%);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1.5;
+  color: #1b1b1b;
+  background: #f6f7fb;
 }
 
-/* Layout wrappers */
-.site-header, .site-main, .site-footer{
-  max-width: 1100px;        /* limited width */
-  margin: 0 auto;           /* centered */
+h1, h2 {
+  font-family: "Merriweather", Georgia, serif;
+}
+
+.site-header {
+  background: white;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky; top: 0; z-index: 5;
+}
+.site-header h1 {
+  margin: 0; padding: .75rem 1rem;
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+}
+
+.main-nav ul {
+  list-style: none; display: flex; flex-wrap: wrap; gap: .5rem;
+  padding: .5rem 1rem 1rem; margin: 0;
+}
+
+
+.main-nav a {
+  display: inline-block;
+  padding: .5rem .8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .05s ease, background .2s ease;
+}
+.main-nav a:hover { transform: translateY(-1px); }
+.main-nav a.active { background: #111827; color: #fff; border-color: #111827; }
+
+#main {
+  max-width: var(--page-max);
+  margin-inline: auto;
   padding: 1rem;
 }
 
-/* Header */
-.site-header{
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  border-bottom: 1px solid #1f2937;
-}
-
-.brand h1{
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: .2px;
-}
-
-/* Hamburger (mobile visible) */
-.menu-toggle{
-  margin-left: auto;
-  border: 1px solid #1f2937;
-  background: var(--card);
-  color: var(--text);
-  padding: .5rem .8rem;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* Nav (Flex) */
-.site-nav{
-  width: 100%;
-}
-
-.nav-list{
-  list-style: none;
-  margin: .75rem 0 0 0;
-  padding: 0;
-  display: none;            /* collapsed by default on mobile */
-  flex-wrap: wrap;
-  gap: .5rem;
-}
-
-/* When toggled open (JS adds .open to .nav-list) */
-.nav-list.open{
-  display: flex;
-}
-
-.nav-list a{
-  display: inline-block;
-  text-decoration: none;
-  color: var(--text);
-  padding: .5rem .85rem;
-  border: 1px solid #1f2937;
-  border-radius: 999px;
-  transition: transform .08s ease, border-color .18s ease, background-color .18s ease;
-}
-
-/* Hover effect */
-.nav-list a:hover,
-.nav-list a:focus-visible{
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #0b1220;
-  border-color: transparent;
-  transform: translateY(-1px);
-}
-
-/* Main */
-.site-main > h2{
-  margin: .5rem 0 1rem 0;
-  font-family: "Merriweather", Georgia, serif;
-  font-weight: 700;
-}
-
-/* Gallery Grid — mobile: 1 column */
-.gallery{
+.cards {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--gap);
+  align-items: stretch;
 }
 
-figure{
-  margin: 0;
-  background: var(--card);
-  border: 1px solid #1f2937;
-  border-radius: var(--radius);
+.card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
   overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
-figure img{
+.card img {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
 }
 
-figcaption{
-  padding: .75rem 1rem;
-  color: var(--muted);
+.card .content {
+  padding: .9rem 1rem 1rem;
+  display: grid;
+  gap: .35rem;
 }
+.card h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.meta { font-size: .94rem; color: #444; }
+.small { color: #666; font-size: .9rem; }
 
-/* Footer */
-.site-footer{
-  color: var(--muted);
-  border-top: 1px solid #1f2937;
+.empty {
   text-align: center;
-  margin-top: 2rem;
+  color: #666;
+  grid-column: 1 / -1;
+  padding: 2rem 1rem;
 }
