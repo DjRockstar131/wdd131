@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WDD131 Week 04 - Native lazy loading demo with fade-in effect.">
+  <meta name="author" content="Davin Quist">
+  <title>Week 04 • Native Lazy Loading</title>
+  <link rel="preconnect" href="https://picsum.photos">
+  <link rel="stylesheet" href="styles/lazyload.css">
+  <script src="scripts/lazyload.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Gallery</h1>
+
+    <!-- Six portrait images, 400×600+ -->
+    <!-- Replace the src values with your own images if desired. Keep width=400 and height≥600 attributes. -->
+    <img class="lazy-img" src="https://picsum.photos/seed/1/400/650" alt="Random portrait placeholder 1"
+         width="400" height="650" loading="lazy">
+    <img class="lazy-img" src="https://picsum.photos/seed/2/400/700" alt="Random portrait placeholder 2"
+         width="400" height="700" loading="lazy">
+    <img class="lazy-img" src="https://picsum.photos/seed/3/400/620" alt="Random portrait placeholder 3"
+         width="400" height="620" loading="lazy">
+    <img class="lazy-img" src="https://picsum.photos/seed/4/400/680" alt="Random portrait placeholder 4"
+         width="400" height="680" loading="lazy">
+    <img class="lazy-img" src="https://picsum.photos/seed/5/400/640" alt="Random portrait placeholder 5"
+         width="400" height="640" loading="lazy">
+    <img class="lazy-img" src="https://picsum.photos/seed/6/400/750" alt="Random portrait placeholder 6"
+         width="400" height="750" loading="lazy">
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Davin Quist • WDD131 • Week 04</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>

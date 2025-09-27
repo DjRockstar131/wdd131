@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Filtered Temples - dynamic cards and filters (WDD131)">
+  <meta name="author" content="Davin Quist">
+  <title>Filtered Temples</title>
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Temple Album (Filtered)</h1>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><button data-filter="home"  class="active">Home</button></li>
+        <li><button data-filter="old">Old</button></li>
+        <li><button data-filter="new">New</button></li>
+        <li><button data-filter="large">Large</button></li>
+        <li><button data-filter="small">Small</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="cards" class="cards" aria-live="polite" aria-busy="false">
+      <!-- JS injects temple cards here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Davin Quist • WDD131 • Filtered Temples</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
