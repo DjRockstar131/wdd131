@@ -1,0 +1,30 @@
+body {
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 900px;
+  line-height: 1.6;
+  background-color: #ECF0F1;
+  color: #2C3E50;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: "Cinzel Decorative", serif;
+  color: #DF0000;
+}
+
+header, footer {
+  background-color: #2C3E50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
