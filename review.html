@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Review Submitted</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Forum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/form.css" />
+<script src="scripts/review.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<h1>Thanks for your review!</h1>
+<p class="tag">Here is a summary of what you submitted.</p>
+</header>
+
+
+<main>
+<section class="card">
+<h2>Submission Summary</h2>
+<dl class="summary" id="summary"></dl>
+</section>
+
+
+<section class="card">
+<h2>Your Review Streak</h2>
+<p>You have submitted <strong id="reviewCount">0</strong> review(s) on this device.</p>
+<p class="small">(We increment this counter each time this page loads successfully.)</p>
+</section>
+
+
+<p><a class="btn-link" href="form.html">Submit another review</a></p>
+</main>
+
+
+<footer class="site-footer">
+<p><span id="year"></span> • Your Name • WDD 131</p>
+<p id="lastModified"></p>
+</footer>
+
+
+<script>
+// common footer content
+const now = new Date();
+document.getElementById('year').textContent = now.getFullYear();
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css" />
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Product Review</h1>
+    <p class="tag">Tell us what you think</p>
+  </header>
+
+  <main>
+    <form id="reviewForm" method="get" action="review.html" novalidate>
+      <!-- Product -->
+      <div class="form-row">
+        <label for="product">Product Name <span aria-hidden="true">*</span></label>
+        <select id="product" name="productId" required>
+          <option value="" disabled selected>Select a Product ...</option>
+          <!-- Options injected by scripts/form.js from product array -->
+        </select>
+        <p class="help" id="productHelp">Choose the exact product you installed.</p>
+      </div>
+
+      <!-- Overall Rating -->
+      <fieldset class="form-row">
+        <legend>Overall Rating <span aria-hidden="true">*</span></legend>
+        <p class="help">Select your rating 1-5 stars.</p>
+        <div class="stars" role="radiogroup" aria-label="Overall rating from 1 to 5">
+          <input type="radio" id="rating-1" name="rating" value="1" required>
+          <label for="rating-1" title="1 star">★</label>
+
+          <input type="radio" id="rating-2" name="rating" value="2" required>
+          <label for="rating-2" title="2 stars">★</label>
+
+          <input type="radio" id="rating-3" name="rating" value="3" required>
+          <label for="rating-3" title="3 stars">★</label>
+
+          <input type="radio" id="rating-4" name="rating" value="4" required>
+          <label for="rating-4" title="4 stars">★</label>
+
+          <input type="radio" id="rating-5" name="rating" value="5" required>
+          <label for="rating-5" title="5 stars">★</label>
+        </div>
+        
+      </fieldset>
+
+      <!-- Date of Installation -->
+      <div class="form-row">
+        <label for="installed">Date of Installation <span aria-hidden="true">*</span></label>
+        <input type="date" id="installed" name="installed" required>
+      </div>
+
+      <!-- Useful Features -->
+      <fieldset class="form-row">
+        <legend>Useful Features (check all that apply)</legend>
+        <div class="checks">
+          <div class="check">
+            <input type="checkbox" id="feat1" name="features" value="Durability">
+            <label for="feat1">Durability</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="feat2" name="features" value="Ease of Use">
+            <label for="feat2">Ease of Use</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="feat3" name="features" value="Design">
+            <label for="feat3">Design</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="feat4" name="features" value="Performance">
+            <label for="feat4">Performance</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="feat5" name="features" value="Value">
+            <label for="feat5">Value</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Written Review (optional) -->
+      <div class="form-row">
+        <label for="review">Written Review (optional)</label>
+        <textarea id="review" name="review" rows="6" placeholder="Share details that would help others…"></textarea>
+      </div>
+
+      <!-- User Name (optional) -->
+      <div class="form-row">
+        <label for="username">Your Name (optional)</label>
+        <input type="text" id="username" name="username" autocomplete="name" placeholder="Jane Doe">
+      </div>
+
+      <div class="actions">
+        <input type="submit" value="Submit Review" class="btn" />
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p><span id="year"></span> • Davin Quist • WDD 131</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script>
+    // common footer content
+    const now = new Date();
+    document.getElementById('year').textContent = now.getFullYear();
+    document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+  </script>
+</body>
+</html>
+
