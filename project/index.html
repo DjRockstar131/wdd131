@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Beginner-friendly guide to official Dungeons & Dragons resources." />
+  <meta name="author" content="Davin Quist" />
+  <title>Adventurer’s Guide to Dungeons & Dragons</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles-large.css" media="(min-width: 900px)">
+
+  <script defer src="scripts/main.js"></script>
+  <script defer src="scripts/generator.js"></script>
+</head>
+<body>
+  <header id="site-header"><!-- filled by main.js --></header>
+
+  <main>
+    <section class="hero">
+      <!-- responsive image with lazy loading -->
+      <picture>
+        
+        <img src="images/hero-800.webp" alt="Adventurers on a cart planning a quest" loading="lazy" width="800" height="400">
+      </picture>
+      <div class="hero-text">
+        <h1>Start Your D&D Journey</h1>
+        <p>Learn what D&D is, build a character, and find official adventures.</p>
+        <a class="btn primary" href="learn.html">Explore Resources</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="intro">
+      <h2 id="intro">What is D&D?</h2>
+      <p>Dungeons & Dragons is a cooperative storytelling game using dice, character sheets, and imagination. You play a character of your own making, solve problems, and go on adventures guided by a Dungeon Master.</p>
+    </section>
+
+    <section aria-labelledby="generator">
+      <h2 id="generator">Quick Idea Generator</h2>
+      <p class="muted">Need a spark? Generate a random hook or creature. Save favorites for later.</p>
+
+      <div class="gen-controls">
+        <button id="gen-hook" class="btn">Random Quest Hook</button>
+        <button id="gen-monster" class="btn">Random Monster</button>
+        <button id="clear-faves" class="btn outline">Clear Favorites</button>
+      </div>
+
+      <output id="gen-output" aria-live="polite"></output>
+
+      <h3>Favorites</h3>
+      <ul id="favorites-list" class="cards"></ul>
+    </section>
+
+    <section aria-labelledby="links">
+      <h2 id="links">Official Links</h2>
+      <div class="grid cards">
+        <a class="card" href="https://www.dndbeyond.com/" target="_blank" rel="noopener">D&D Beyond</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"><!-- filled by main.js --></footer>
+</body>
+</html>

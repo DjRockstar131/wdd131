@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review Submission</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles-large.css" media="(min-width: 900px)">
+  <script defer src="scripts/main.js"></script>
+  <script defer>
+    // Read the query string, show values, and stash in localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(location.search);
+      const data = Object.fromEntries(params.entries());
+
+      const out = document.getElementById("review");
+      out.innerHTML = `
+        <h1>Review Your Submission</h1>
+        <p><strong>Name:</strong> ${data.name ?? ""}</p>
+        <p><strong>Email:</strong> ${data.email ?? ""}</p>
+        <p><strong>Resource:</strong> ${data.product ?? ""}</p>
+        <p><strong>Rating:</strong> ${data.rating ?? ""} / 5</p>
+        <p><strong>Message:</strong> ${data.message ?? ""}</p>
+      `;
+
+      // Save to localStorage (demonstrates storage usage)
+      const submissions = JSON.parse(localStorage.getItem("submissions") || "[]");
+      submissions.push({...data, date: new Date().toISOString()});
+      localStorage.setItem("submissions", JSON.stringify(submissions));
+    });
+  </script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <main id="review"></main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

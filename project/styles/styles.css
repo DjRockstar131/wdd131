@@ -1,0 +1,110 @@
+:root{
+  --bg:#2C3E50;           /* dark blue-gray */
+  --brand:#DF0000;        /* D&D red */
+  --text:#ECF0F1;         /* light gray */
+  --muted:#b9c3c9;
+  --card:#0f1a22;
+  --ring:#ffb4b4;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+h1,h2,h3,nav .brand{font-family:"Cinzel Decorative",serif}
+a{color:var(--text)}
+img{max-width:100%;display:block}
+
+header, footer{
+  background:#1d2a35;
+  padding:1rem;
+  border-bottom:1px solid #000;
+}
+.sitebar{
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+}
+.brand{font-size:1.5rem;font-weight:700}
+.nav-toggle{background:none;border:1px solid var(--text);color:var(--text);padding:.4rem .6rem;border-radius:.5rem}
+nav ul{list-style:none;margin:0;padding:0;display:none;gap:.75rem}
+nav a{padding:.4rem .6rem;border-radius:.5rem;text-decoration:none}
+nav a.active, .btn.primary{background:var(--brand);color:white}
+.theme-toggle{margin-left:.5rem}
+
+nav.open ul{display:flex;flex-direction:column}
+
+main{padding:1rem;max-width:1100px;margin:auto}
+.hero{position:relative;border-radius:1rem;overflow:hidden;background:#0b141a}
+.hero-text{padding:1rem}
+.btn{display:inline-block;background:#2b3a46;color:var(--text);padding:.6rem .9rem;border-radius:.6rem;text-decoration:none;border:none;cursor:pointer}
+.btn.outline{background:transparent;border:1px solid var(--text)}
+.muted{color:var(--muted)}
+
+.grid{display:grid;gap:1rem}
+.cards .card, .cards a.card, article.card{
+  background:var(--card);padding:1rem;border-radius:.8rem;border:1px solid #0b1820
+}
+
+.gen-controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+#gen-output{display:block;margin:.75rem 0;padding:.75rem;border-radius:.6rem;background:#11202a;border:1px dashed #274555}
+
+fieldset{border:1px solid #233140;border-radius:.6rem;margin:1rem 0}
+legend{padding:0 .3rem}
+label{display:grid;gap:.35rem;margin:.6rem 0}
+input, select, textarea{
+  background:#0d1820;color:var(--text);border:1px solid #1f2e39;
+  border-radius:.5rem;padding:.5rem
+}
+input:focus, select:focus, textarea:focus{outline:2px solid var(--ring);outline-offset:1px}
+
+/* LTR star rating */
+.stars-ltr {
+  display: inline-flex;
+  gap: .25rem;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* Visually hide the radios but keep them accessible to AT */
+.stars-ltr > input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0; height: 0;
+}
+
+/* Star labels */
+.stars-ltr > label {
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Empty star */
+.stars-ltr > label::before { content: "☆"; }
+
+/* Filled star */
+.stars-ltr > label.is-filled::before { content: "★"; }
+
+/* Optional focus ring for keyboard users */
+.stars-ltr > label:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+/* Put this near the end of styles.css */
+.light {
+  --bg:#f6f6f7;
+  --text:#1e2327;
+  --card:#ffffff;
+  --brand:#c30000;
+  --muted:#5b6570;
+  --ring:#c71d1d;
+}
+
+
+.footer-note{font-size:.9rem;color:var(--muted)}

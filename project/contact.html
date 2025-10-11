@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact • Adventurer’s Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/styles-large.css" media="(min-width: 900px)">
+  <script defer src="scripts/main.js"></script>
+  <script defer src="scripts/form.js"></script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <main>
+    <h1>Contact</h1>
+    <p>Send a question or share your favorite official resource.</p>
+
+    <form id="contact-form" method="get" action="review.html" novalidate>
+      <fieldset>
+        <legend>Your Info</legend>
+        <label> Name
+          <input name="name" id="name" required autocomplete="name">
+        </label>
+        <label> Email
+          <input type="email" name="email" id="email" required autocomplete="email">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Topic</legend>
+        <label for="product">Resource</label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Select a Resource …</option>
+        </select>
+
+        <label> Rating </label>
+<div class="stars-ltr" role="radiogroup" aria-label="Rate from 1 to 5 stars" data-selected="0">
+  <!-- Radios are the form source of truth; labels are the star UI -->
+  <input type="radio" id="rate-1" name="rating" value="1" required>
+  <label for="rate-1" data-value="1" aria-label="1 star" tabindex="0"></label>
+
+  <input type="radio" id="rate-2" name="rating" value="2">
+  <label for="rate-2" data-value="2" aria-label="2 stars" tabindex="0"></label>
+
+  <input type="radio" id="rate-3" name="rating" value="3">
+  <label for="rate-3" data-value="3" aria-label="3 stars" tabindex="0"></label>
+
+  <input type="radio" id="rate-4" name="rating" value="4">
+  <label for="rate-4" data-value="4" aria-label="4 stars" tabindex="0"></label>
+
+  <input type="radio" id="rate-5" name="rating" value="5">
+  <label for="rate-5" data-value="5" aria-label="5 stars" tabindex="0"></label>
+</div>
+
+
+        <label> Message
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </label>
+      </fieldset>
+
+      <button class="btn primary" type="submit">Review Submission</button>
+    </form>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>
